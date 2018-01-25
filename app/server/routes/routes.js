@@ -1,8 +1,8 @@
 const routes = require('express').Router();
-const sortString = require('../util/sortString');
+const { addToObject } = require('../util/helpers');
 
 routes.post('/strings', (req, res) => {
-  const strings = sortString(req.body.string);
+  const strings = addToObject(req.body.string);
   res.status(201).json(strings);
 });
 
